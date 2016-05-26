@@ -19,6 +19,7 @@ download-jdk-tarball:
     - name: curl {{ java.dl_opts }} -o '{{ tarball_file }}' '{{ java.source_url }}'
     - unless: test -d {{ java.java_real_home }} || test -f {{ tarball_file }}
     - require:
+      - pkg: curl
       - file: java-install-dir
 
 unpack-jdk-tarball:
