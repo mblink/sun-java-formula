@@ -6,6 +6,9 @@
 
   {%- set tarball_file = java.prefix + '/' + java.source_url.split('/') | last %}
 
+include:
+  - curl
+
 java-install-dir:
   file.directory:
     - name: {{ java.prefix }}
